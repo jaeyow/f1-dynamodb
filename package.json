@@ -1,0 +1,22 @@
+{
+  "name": "f1-dynamodb",
+  "version": "1.0.0",
+  "description": "F1 Rest API using Serverless and DynamoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy --aws-profile serverless",
+    "start": "serverless offline -s prod --aws-profile serverless",
+    "debug": "node --inspect /usr/local/lib/node_modules/serverless/bin/serverless --aws-profile serverless offline -s prod"
+  },
+  "author": "Jose Reyes",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.686.0",
+    "ksuid": "^1.2.0",
+    "middy": "^0.36.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.4.0"
+  }
+}
