@@ -1,6 +1,7 @@
-const AWS = require('aws-sdk')
-const dynamodb = new AWS.DynamoDB()
-const { seasonFromItem } = require('../entities')
+require('dotenv').config();
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB();
+const { seasonFromItem } = require('../entities');
 
 const getF1Seasons = async () => {
     try {
