@@ -15,8 +15,7 @@ const getRaceResults = async ({result}) => {
             ExpressionAttributeValues: {
                 ':pk': result.key()['PK'],
                 ':sk': {'S': `RACE#${result.round}#RESULT#`} 
-            },
-            ScanIndexForward: true
+            }
         }).promise();
 
         if (!resp.Items.length) {
