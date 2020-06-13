@@ -40,6 +40,12 @@ functions:
       - http:
           path: f1-season-races/{season}
           method: get
+  getRaceResults:
+    handler: handlers/getRaceResults.handler
+    events:
+      - http:
+          path: f1-race-results/{season}/{round}
+          method: get
 
 resources:
   Resources:
