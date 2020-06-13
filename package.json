@@ -18,6 +18,7 @@
     "middy": "^0.36.0"
   },
   "devDependencies": {
+    "serverless-export-env": "github:arabold/serverless-export-env",
     "serverless-offline": "^6.4.0"
   }
 }

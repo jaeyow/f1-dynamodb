@@ -3,7 +3,7 @@ const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB();
 const { seasonFromItem } = require('../entities');
 
-const getF1Seasons = async () => {
+const getF1SeasonRaces = async () => {
     try {
         const resp = await dynamodb.query({
             TableName: process.env.TABLE_NAME,
@@ -38,5 +38,5 @@ const getF1Seasons = async () => {
 }
 
 module.exports = {
-    getF1Seasons
+    getF1SeasonRaces
 }

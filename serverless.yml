@@ -21,6 +21,11 @@ provider:
                   - Arn
   environment:
     TABLE_NAME: { Ref: F1Table }
+    AWS_PROFILE: "serverless"
+  
+custom:
+  export-env:
+    filename: .env
 
 functions:
   getF1Seasons:
@@ -50,3 +55,5 @@ resources:
 
 plugins:
   - serverless-offline
+  - serverless-export-env
+
