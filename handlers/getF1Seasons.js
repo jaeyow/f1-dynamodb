@@ -1,6 +1,5 @@
 const { makeHandler } = require('./utils')
 const { getF1Seasons } = require('../data')
-const { F1Season } = require('../entities')
 
 const handler = async event => {
   const { seasons, error } = await getF1Seasons()

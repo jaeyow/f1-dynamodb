@@ -1,38 +1,37 @@
 require('dotenv').config();
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB();
-const { seasonFromItem } = require('../entities');
+const { raceFromItem } = require('../entities');
 
-const getF1SeasonRaces = async () => {
+const getF1SeasonRaces = async ({race}) => {
     try {
         const resp = await dynamodb.query({
             TableName: process.env.TABLE_NAME,
-            // TableName: 'F1Table',
             KeyConditionExpression: '#pk = :pk',
             ExpressionAttributeNames: {
                 '#pk': 'PK'
             },
             ExpressionAttributeValues: {
-                ':pk': {'S': 'F1#SEASONS'}
+                ':pk': race.key()['PK']
             },
             ScanIndexForward: false
         }).promise();
 
         if (!resp.Items.length) {
             return {
-                error: 'F1 Season list is empty.'
+                error: 'F1 Season races list is empty.'
             };
         }
-        const seasons = resp.Items.map((item) => seasonFromItem(item));
-        console.log(seasons);
+        const races = resp.Items.map((item) => raceFromItem(item));
+        console.log(races);
         return {
-            seasons
+            races
         };
     } catch(error) {
-        console.log('Error retrieving F1 Seasons')
+        console.log(`Error retrieving ${race.season} F1 Season races`)
         console.log(error)
         return {
-            error: 'Could not retrieve F1 Seasons'
+            error: `Error retrieving ${race.season} F1 Season races`
         }
     }
 }

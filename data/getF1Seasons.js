@@ -7,7 +7,6 @@ const getF1Seasons = async () => {
     try {
         const resp = await dynamodb.query({
             TableName: process.env.TABLE_NAME,
-            // TableName: 'F1Table',
             KeyConditionExpression: '#pk = :pk',
             ExpressionAttributeNames: {
                 '#pk': 'PK'
