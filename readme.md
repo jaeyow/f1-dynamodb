@@ -1,0 +1,2 @@
+- [Installing Python in MacOS](https://opensource.com/article/19/5/python-3-default-mac#what-to-do)
+- [useful guide for creating utility DynamoDB scripts](https://www.dynamodbguide.com/hierarchical-data) using Python boto3 library
