@@ -12,7 +12,7 @@
   "author": "Jose Reyes",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.686.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^8.2.0",
     "ksuid": "^1.2.0",
     "middy": "^0.36.0"
