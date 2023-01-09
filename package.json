@@ -19,6 +19,6 @@
   },
   "devDependencies": {
     "serverless-export-env": "github:arabold/serverless-export-env",
-    "serverless-offline": "^6.4.0"
+    "serverless-offline": "^12.0.4"
   }
 }
